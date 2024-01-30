@@ -1,0 +1,45 @@
+{
+    "num_epoches":60,
+    "batch_size": 128,
+    "fusion_loc":"before",
+    "backbone":"resnet18",
+    "share_dis":true,
+    "alpha_grain":2,
+    "discrimator_level":1,
+    "device": 1,
+    
+    "main_optim":"AdamW",
+    "main_learning_rate":0.001,
+    "main_betas":[0.9,0.999],
+
+    "dis_optim":"AdamW",
+    "dis_learning_rate":0.001,
+    "dis_betas":[0.9,0.999],
+
+    "share_optim":"AdamW",
+    "share_laearning_rate":0.001,
+    "share_betas":[0.9,0.999],
+
+    "use_one_optim":true,
+    "optim":"AdamW",
+    "betas":[0.9, 0.99],
+    "learning_rate": 0.0001,
+    "weight_decay":0,
+
+
+    "lr_scheduler":"multi_step",
+    "gamma":0.1,
+    "milestones":[10, 20, 30],
+    "nesterov":false,
+
+    "main_loss_weight":1,
+    "dis_loss_weight":0.5,
+    "share_loss_weight":2,
+    
+    "img_dir":"/media/antec/data/data/CelebA/img_align_celeba",
+    "eval_dir":"/media/antec/data/data/CelebA/list_eval_partition.txt",
+    "label_dir":"/media/antec/data/data/CelebA/list_attr_celeba.txt",
+    "log":"pt.txt",
+    "save_path":"./model1.pth",
+    "frequently_test":false
+}
